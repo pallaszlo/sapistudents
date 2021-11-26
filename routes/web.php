@@ -56,6 +56,10 @@ Route::get('/deletestudent/{id}', function ($id) {
 
 */
 
-Route::get('students', [StudentController::class, 'index']);
-Route::get('students/{id}', [StudentController::class, 'show']);
-Route::delete('/students/{id}', [StudentController::class, 'destroy']);
+Route::get('students', [StudentController::class, 'index'])->name('students.index');
+Route::get('students/create', [StudentController::class, 'create'])->name('students.create');
+Route::post('/students/store', [StudentController::class, 'store'])->name('students.store');
+Route::get('students/{student}', [StudentController::class, 'show']);
+Route::get('students/edit/{student}',[StudentController::class, 'edit'])->name('students.edit');
+Route::post('students/edit/{student}',[StudentController::class, 'update'])->name('students.update');
+Route::delete('/students/{student}', [StudentController::class, 'destroy'])->name('students.destroy');
