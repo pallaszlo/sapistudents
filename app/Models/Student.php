@@ -11,7 +11,23 @@ class Student extends Model
     use HasFactory;
 
     protected $fillable = [
-      'name',
-      'email',
+        'program_id',
+        'name',
+        'email',
+        'gender',
+    ];
+
+    public function program()
+    {
+        return $this->belongsTo('App\Models\Program');
+    }
+
+    public function courses()
+    {
+        return $this->belongsToMany('App\Models\Course');
+    }
+
+    protected $casts = [
+        'created_at' => 'datetime:Y-m-d',
     ];
 }

@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    //return view('welcome');
-    return view('mywelcome');
+    return view('welcome');
+    //return view('mywelcome');
 });
 
 /*
@@ -63,3 +63,43 @@ Route::get('students/{student}', [StudentController::class, 'show']);
 Route::get('students/edit/{student}',[StudentController::class, 'edit'])->name('students.edit');
 Route::post('students/edit/{student}',[StudentController::class, 'update'])->name('students.update');
 Route::delete('/students/{student}', [StudentController::class, 'destroy'])->name('students.destroy');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/proba1', function(){
+
+    $students = App\Models\Program::find(1)->students;
+    foreach ($students as $stud) {
+        echo $stud->name. '<br>';
+    }
+
+    $student = App\Models\Student::find(1);
+    echo $student->program->name;
+
+});
+
+Route::get('/proba2', function(){
+
+    // Egy hallgató kurzusai
+    $student = App\Models\Student::find(1);
+    $courses = $student->courses;
+    foreach ($courses as $course) {
+        echo $course->name. '<br>';
+    }
+
+    // Egy kurzus hallgatói
+    $course = App\Models\Course::find(1);
+    $students = $course->students;
+    foreach ($students as $stud) {
+        echo $stud->name. '<br>';
+    }
+
+});
+
+Route::get('people/{name}/{surname?}', function ($name, $surname) {
+
+    return 'Hello ' . $name . ' ' . $surname;
+
+});

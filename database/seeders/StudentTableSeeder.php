@@ -15,24 +15,34 @@ class StudentTableSeeder extends Seeder
     public function run()
     {
         DB::table('students')->insert([
+            'program_id'=>'1',
             'name' => 'Kiss Balazs',
             'email'=> 'kisbalazs@gmail.com',
-            'gender' => 1,
         ]);
         DB::table('students')->insert([
+            'program_id'=>'1',
             'name' => 'Nagy Peter',
             'email'=> 'nagypeter@gmail.com',
-            'gender' => 1,
         ]);
         DB::table('students')->insert([
-            'name' => 'Egy Anna',
-            'email'=> 'anna@gmail.com',
-            'gender' => 0,
+            'program_id'=>'1',
+            'name' => 'Keksz Fülöp',
+            'email'=> 'kfulop@gmail.com',
         ]);
         DB::table('students')->insert([
-            'name' => 'Ket Ilona',
-            'email'=> 'ili@gmail.com',
-            'gender' => 0,
+            'program_id'=>'2',
+            'name' => 'Gezder Misi',
+            'email'=> 'misi@gmail.com',
+        ]);
+        DB::table('students')->insert([
+            'program_id'=>'3',
+            'name' => 'Nagy Erna',
+            'email'=> 'nerna@gmail.com',
+        ]);
+        DB::table('students')->insert([
+            'program_id'=>'2',
+            'name' => 'Szasz Reka',
+            'email'=> 'szreka@gmail.com',
         ]);
     }
 }
