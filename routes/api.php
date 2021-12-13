@@ -20,6 +20,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('students', [App\Http\Controllers\API\StudentController::class, 'index']);
 Route::get('students/{student}', [App\Http\Controllers\API\StudentController::class, 'show']);
+Route::post('students', [\App\Http\Controllers\API\StudentController::class, 'store']);
+Route::delete('students/{student}', [\App\Http\Controllers\API\StudentController::class, 'destroy']);
+
 
 Route::post('login', [\App\Http\Controllers\API\AuthController::class, 'login']);
 Route::post('register', [\App\Http\Controllers\API\AuthController::class, 'register']);

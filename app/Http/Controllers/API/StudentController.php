@@ -19,4 +19,23 @@ class StudentController extends Controller
     {
         return new StudentResource($student);
     }
+
+    public function store(Request $request)
+    {
+        $stud = new Student([
+            'name' => $request->input('name'),
+            //'program_id'=> $request->input('program_id'),
+            'email'=> $request->input('email'),
+            //'status'=> $request->input('status')
+        ]);
+
+        $stud->save();
+        return new StudentResource($stud);
+    }
+
+    public function destroy(Student $student)
+    {
+        $student->delete();
+        return new StudentResource($student);
+    }
 }
