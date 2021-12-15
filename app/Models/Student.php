@@ -14,7 +14,7 @@ class Student extends Model
         'program_id',
         'name',
         'email',
-        'gender',
+        'status',
     ];
 
     public function program()

@@ -18,8 +18,8 @@ class CreateStudentsTable extends Migration
             //$table->unsignedBigInteger('program_id');
             $table->string('name');
             $table->string('email');
-            $table->tinyInteger('gender')->nullable();
-            //$table->tinyInteger('status')->default(0);
+            //$table->tinyInteger('gender')->nullable();
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
 
             //$table->foreign('program_id')->references('id')->on('programs')->onDelete('cascade');
