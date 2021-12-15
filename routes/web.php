@@ -66,7 +66,7 @@ Route::delete('/students/{student}', [StudentController::class, 'destroy'])->nam
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\API\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/proba1', function(){
 
