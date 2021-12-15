@@ -97,9 +97,3 @@ Route::get('/proba2', function(){
     }
 
 });
-
-Route::get('people/{name}/{surname?}', function ($name, $surname) {
-
-    return 'Hello ' . $name . ' ' . $surname;
-
-});

@@ -24,7 +24,7 @@ class StudentController extends Controller
     {
         $stud = new Student([
             'name' => $request->input('name'),
-            //'program_id'=> $request->input('program_id'),
+            'program_id'=> $request->input('program_id'),
             'email'=> $request->input('email'),
             //'status'=> $request->input('status')
         ]);
